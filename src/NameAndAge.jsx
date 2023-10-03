@@ -1,15 +1,35 @@
 import { useState } from "react";
 
 export function NameAndAge() {
-  const [value, setValue] = useState("");
+  // const [array, setArray] = useState([]);
+  const [name, setName] = useState("");
+  let [age, setAge] = useState(0);
+
+  function incrementAge() {
+    age = age + 1;
+    setAge(age);
+  }
+
+  function decrementAge() {
+    age = age - 1;
+    setAge(age);
+  }
 
   return (
     <div>
-      <input
-        type="text"
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      />
+      <input value={name} onChange={(event) => setName(event.target.value)} />
+      <br />
+      <br />
+      <div>
+        <button onClick={incrementAge}>+</button>
+        {age}
+        <button onClick={decrementAge}>-</button>
+      </div>
+      <br />
+      <br />
+      <h1>
+        `My name is {name} and I am {age} years old.`
+      </h1>
     </div>
   );
 }
