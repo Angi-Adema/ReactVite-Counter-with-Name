@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function NameAndAge() {
   // const [array, setArray] = useState([]);
   const [name, setName] = useState("");
   let [age, setAge] = useState(0);
+
+  useEffect(() => {
+    console.log("Age was changed", age);
+  }, [age]);
 
   function incrementAge() {
     age = age + 1;
