@@ -28,7 +28,7 @@ export function NameAndAge() {
       <br />
       <br />
       <h1>
-        `My name is {name} and I am {age} years old.`
+        My name is {name} and I am {age} years old.
       </h1>
     </div>
   );
